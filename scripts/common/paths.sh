@@ -17,11 +17,12 @@ LOCATIONS_FILE="${REPO_DIR}/locations.xml"
 UNUSED_LANGUAGES_FILE="${UNUSED_DATA_DIR}/languages.xml"
 UNUSED_LOCATIONS_FILE="${UNUSED_DATA_DIR}/locations.xml"
 
-if [ -d "${HOME}/.games/Steam/common" ]; then
-    STEAM_APPS_DIR="${HOME}/.games/Steam"
-elif [ -d "${HOME}/.local/share/Steam/steamapps/common" ]; then
-    STEAM_APPS_DIR="${HOME}/.local/share/Steam/steamapps"
-fi
+STEAM_APPS_DIR="/mnt/g/Steam/steamapps"
+#if [ -d "${HOME}/.games/Steam/common" ]; then
+#    STEAM_APPS_DIR="${HOME}/.games/Steam"
+#elif [ -d "${HOME}/.local/share/Steam/steamapps/common" ]; then
+#    STEAM_APPS_DIR="${HOME}/.local/share/Steam/steamapps"
+#fi
 
 STEAM_GAMES_DIR="${STEAM_APPS_DIR}/common"
 STEAM_WORKSHOP_DIR="${STEAM_APPS_DIR}/workshop"
