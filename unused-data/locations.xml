@@ -4837,6 +4837,14 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>capraia</Id>
+    <Names>
+      <Name language="Italian" value="Capraia" />
+      <Name language="Latin" value="Aegilium" adjective="Aegilianus" />
+      <Name language="Greek_Ancient" value="Aigýlion" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>caprivi_strip</Id>
     <WikidataId>Q832222</WikidataId>
     <Names>
