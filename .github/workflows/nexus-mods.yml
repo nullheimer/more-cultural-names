@@ -51,15 +51,3 @@ jobs:
         version: ${{github.ref_name}}
         description: "Changelog: https://github.com/hmlendea/stellaris-ui-flags/releases/${{github.ref_name}}"
         file_category: main
-
-    - name: Upload
-      uses: hmlendea/nexusmods-update@latest
-      with:
-        account_email_address: ${{secrets.NEXUS_USERNAME}}
-        account_password: ${{secrets.NEXUS_PASSWORD}}
-        nexus_game_id: ${{matrix.config.nexus_game_id}}
-        nexus_mod_id: ${{matrix.config.nexus_mod_id}}
-        mod_file_name: ${{matrix.config.mod_file_name}}
-        mod_version: ${{github.ref_name}}
-        file_description: "Changelog: https://github.com/hmlendea/stellaris-ui-flags/releases/${{github.ref_name}}"
-        file_path: "${{matrix.config.mod_game_id}}.zip"
