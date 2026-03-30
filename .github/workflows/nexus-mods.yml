@@ -4,6 +4,11 @@ on:
   push:
     tags:
     - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to release'
+        required: true
 
 jobs:
   release:
@@ -39,7 +44,7 @@ jobs:
 
     steps:
     - name: Prepare
-      run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_${{matrix.config.mod_game_id}}_${GITHUB_REF:11}.zip" -O "${{matrix.config.mod_game_id}}.zip"
+      run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{inputs.tag}}/mcn_${{matrix.config.mod_game_id}}_${GITHUB_REF:11}.zip" -O "${{matrix.config.mod_game_id}}.zip"
 
     - name: Upload
       uses: Nexus-Mods/upload-action@v1.0.0-beta.3
@@ -48,6 +53,6 @@ jobs:
         file_group_id: ${{matrix.config.nexus_file_group_id}}
         filename: ${{matrix.config.mod_game_id}}.zip
         display_name: ${{matrix.config.mod_file_name}}.zip
-        version: ${{github.ref_name}}
-        description: "Changelog: https://github.com/hmlendea/stellaris-ui-flags/releases/${{github.ref_name}}"
+        version: ${{inputs.tag}}
+        description: "Changelog: https://github.com/hmlendea/stellaris-ui-flags/releases/${{inputs.tag}}"
         file_category: main
